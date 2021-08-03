@@ -1,0 +1,36 @@
+//https://www.baeldung.com/java-map-key-from-value
+
+
+
+import java.io.*;
+import java.util.*;
+
+
+public class HelloWorld{
+
+     public static void main(String []args){
+        System.out.println("Hello World");
+        
+        Map<Integer,Integer> mp = new HashMap<>();
+        
+        mp.put(1,2);
+        mp.put(2,2);
+        mp.put(3,7);
+        mp.put(4,2);
+        mp.put(5,7);
+        mp.put(6,10);
+        
+        Set<Integer> st = new HashSet<>();
+        
+        for(Map.Entry<Integer,Integer> entry : mp.entrySet())
+        {
+            if(entry.getValue().equals(7))
+            {
+                st.add(entry.getKey());
+            }
+        }
+        
+        
+        System.out.println("Occurence =" + st.toString());
+     }
+}
